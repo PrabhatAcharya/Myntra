@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="../styles/common.css" />
+		<link
+			rel="stylesheet"
+			href="../styles/productsList/productsList.css" />
+		<link
+			rel="stylesheet"
+			href="../styles/productsList/singleProduct.css" />
+		<link
+			rel="stylesheet"
+			href="../styles/productsList/sidebar.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+	</head>
+	<body>
+		<div id="outerMostContainer">
+			<div id="path">Home / Footwear / Product</div>
+			<div>
+				<span id="currentProduct">Product</span> -
+				<span id="selectedCount">138</span>
+			</div>
+			<div id="mainContainer">
+				<div id="sidebar">
+					<header>
+						<p>Filter</p>
+						<button id="clearAll">Clear All</button>
+					</header>
+					<section id="menWomen">
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="gender"
+								id="men" />
+							<label for="men">Men</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="gender"
+								id="women" />
+							<label for="women">Women</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="gender"
+								id="kids" />
+							<label for="kids">Kids</label>
+						</div>
+					</section>
+					<section id="price">
+						<h3>Price</h3>
+						<div class="inputGroup">
+							<input
+								name="price"
+								type="checkbox"
+								id="2000-3000" />
+							<label for="2000-3000">2000-3000</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								name="price"
+								type="checkbox"
+								id="3001-4000" />
+							<label for="3001-4000">3001-4000</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								name="price"
+								type="checkbox"
+								id="4001-above" />
+							<label for="4001-above">4001-above</label>
+						</div>
+					</section>
+					<section id="discount">
+						<h3>Discount</h3>
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="discount"
+								id="10%above" />
+							<label for="10%above">10%above</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="discount"
+								id="20%above" />
+							<label for="20%above">20% and above</label>
+						</div>
+						<div class="inputGroup">
+							<input
+								type="radio"
+								name="discount"
+								id="30%above" />
+							<label for="30%above">30% and above</label>
+						</div>
+					</section>
+					<section id="color">
+						<h3>Color</h3>
+
+						<div class="inputGroup">
+							<input
+								type="checkbox"
+								id="black" />
+							<label for="black"><span class="round black"></span> Black</label>
+						</div>
+
+						<div class="inputGroup">
+							<input
+								type="checkbox"
+								id="blue" />
+							<label for="blue"><span class="round blue"></span> Blue</label>
+						</div>
+
+						<div class="inputGroup">
+							<input
+								type="checkbox"
+								id="red" />
+							<label for="red"><span class="round red"></span> Red</label>
+						</div>
+
+						<div class="inputGroup">
+							<input
+								type="checkbox"
+								id="green" />
+							<label for="green"><span class="round green"></span> Green</label>
+						</div>
+
+						<div class="inputGroup">
+							<input
+								type="checkbox"
+								id="yellow" />
+							<label for="yellow"
+								><span class="round yellow"></span> yellow</label
+							>
+						</div>
+					</section>
+				</div>
+				<div id="rightContainer">
+					<header>
+						<div id="tags">
+							<select>
+								<option value="">Country Of Origin</option>
+							</select>
+							<select>
+								<option value="">Size</option>
+							</select>
+							<select>
+								<option value="">Fabric</option>
+							</select>
+						</div>
+						<select
+							name="sorting"
+							id="sorting">
+							<option value="">Sort by : Recommended</option>
+							<option value="discount">Better Discount</option>
+							<option value="lth">Price Low to High</option>
+							<option value="htl">Price High to Low</option>
+						</select>
+					</header>
+					<div id="container"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script
+		src="../scripts/productsList.js"
+		type="module"></script>
+</html>
