@@ -240,12 +240,15 @@ discounts.forEach((e) => {
 
 function applyDiscounts() {
 	let dataToBeSorted;
+
 	if (applyPriceCap().length > 0) {
 		dataToBeSorted = applyPriceCap();
 	} else {
 		dataToBeSorted = filtered;
 	}
+
 	let checked;
+
 	discounts.forEach((e) => {
 		if (e.checked) checked = e;
 	});
@@ -266,5 +269,11 @@ function applyDiscounts() {
 			return +e.discount >= 30;
 		});
 	}
+
+	container.innerHTML = '';
+	productsAfterDiscounts.forEach((e) => {
+		renderProducts(e, container);
+	});
+
 	console.log(productsAfterDiscounts);
 }
