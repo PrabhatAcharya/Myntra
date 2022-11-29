@@ -1,0 +1,78 @@
+#sidebar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	height: fit-content;
+	/* border-right: 1px solid gainsboro; */
+}
+
+#sidebar > header {
+	height: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid gainsboro;
+}
+
+header > p {
+	font-size: large;
+	font-weight: 700;
+}
+
+header > button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: coral;
+	font-weight: 700;
+	cursor: pointer;
+	letter-spacing: 1.2px;
+}
+
+#menWomen,
+#price,
+#color,
+#discount {
+	padding: 1rem 0;
+	border-bottom: 1px solid gainsboro;
+}
+
+.inputGroup {
+	display: flex;
+	padding: 0.5rem 0;
+	padding-left: 1rem;
+	gap: 0.8rem;
+}
+
+label > span.round {
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	margin-right: 5px;
+	/* background-color: black; */
+}
+
+.black {
+	background-color: black;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: greenyellow;
+}
+.yellow {
+	background-color: yellow;
+}
+
+#sidebar h3 {
+	/* background-color: red; */
+	padding: 0.5rem 0;
+}

@@ -1,0 +1,95 @@
+:root {
+	--card-width: 13rem;
+}
+
+#container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: calc(100% - calc(2 * var(--card-width)));
+	row-gap: 2rem;
+	/* background-color: red; */
+}
+
+@media screen and (min-width: 810px) {
+	#container {
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: calc(calc(100% - calc(3 * var(--card-width))) / 2);
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	#container {
+		grid-template-columns: repeat(4, 1fr);
+		column-gap: calc(calc(100% - calc(4 * var(--card-width))) / 3);
+	}
+}
+
+#outerMostContainer {
+	padding: 3%;
+}
+
+#path {
+	color: #282c3f;
+	letter-spacing: 1.5px;
+	padding: 0.5rem 0;
+}
+
+#currentProduct {
+	display: inline-block;
+	padding: 0.2rem 0;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+#mainContainer {
+	display: flex;
+	gap: 1rem;
+}
+
+#sidebar {
+	min-width: 14rem;
+}
+
+#rightContainer {
+	width: 100%;
+	padding: 0 2rem;
+}
+
+#rightContainer > header {
+	height: 3rem;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid gainsboro;
+	z-index: 1;
+}
+
+#tags {
+	display: flex;
+	gap: 1rem;
+}
+
+#tags > select {
+	padding: 0.2rem 1rem;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+}
+
+#tags > select:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#rightContainer > header > select {
+	height: 2rem;
+	padding: 0 0.2rem;
+}
+
+#rightContainer > header > select > option {
+	display: block;
+	height: 2rem;
+	font-size: larger;
+}
