@@ -42,7 +42,7 @@ if (!productsFor) {
 const filterProducts = async (URL) => {
 	const products = await getData(URL);
 	const filtered = products.filter((el) => {
-		return el[productsFor];
+		return el.gender === productsFor;
 	});
 	return filtered;
 };
@@ -169,16 +169,12 @@ selectEl.addEventListener('change', async (e) => {
 	let dataToBeSorted;
 	const filtered = await filterProducts(URL);
 	const priceApplied = await applyPriceCap();
-	const discountsPrice = await applyDiscounts();
+	// const discountsPrice = await applyDiscounts();
 
 	if (priceApplied.length > 0) {
 		dataToBeSorted = priceApplied;
 	} else {
 		dataToBeSorted = filtered;
-	}
-
-	if (discountsPrice.length > 0) {
-		dataToBeSorted = discountsPrice;
 	}
 
 	if (e.target.value === 'discount') {

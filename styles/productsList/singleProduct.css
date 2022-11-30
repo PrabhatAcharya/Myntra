@@ -30,13 +30,10 @@
 	/* background-color: red; */
 }
 
-.card h3 {
-	line-height: 2rem;
-}
-
-.card h3 + p {
+.card h3,
+h3 + p {
 	display: inline-block;
-	width: 180px;
+	width: 220px;
 	white-space: nowrap;
 	overflow: hidden !important;
 	text-overflow: ellipsis;
