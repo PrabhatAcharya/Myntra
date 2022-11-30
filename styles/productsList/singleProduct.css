@@ -1,5 +1,5 @@
 :root {
-	--card-width: 14rem;
+	--card-width: 15rem;
 	--card-height: 22rem;
 }
 
@@ -10,10 +10,12 @@
 	display: flex;
 	flex-direction: column;
 	/* background-color: red; */
+	transition: scale 0.1s ease-in-out;
 }
 
 .card:hover {
 	box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.3);
+	scale: 1.02;
 }
 
 .card > img {
@@ -24,11 +26,8 @@
 .card > div {
 	height: 100%;
 	flex: 1;
+	padding: 0 1rem !important;
 	/* background-color: red; */
-}
-
-.card div > * {
-	padding: 0 0.5rem;
 }
 
 .card h3 {
@@ -43,15 +42,19 @@
 	text-overflow: ellipsis;
 }
 
+.card h3 + p + p > span {
+	margin-right: 1rem !important;
+}
+
 #wishListButton {
 	/* display: flex; */
 	display: none;
-	/* gap: 0.5rem; */
+	gap: 0.2rem;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	background-color: white;
-	bottom: 20%;
+	bottom: 22%;
 	padding: 1rem 0;
 	height: 25px;
 	width: 100%;

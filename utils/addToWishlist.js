@@ -1,19 +1,12 @@
-export default function addToWishList(id) {
-	let products = JSON.parse(localStorage.getItem('products')) || [];
+import getData from './getData.js';
+const URL = 'http://localhost:3000/products';
 
-	// console.log(id);
+export default async function addToWishList(id) {
+	const product = await getData(URL + `/${id}`);
 
-	let a = [];
-	products.forEach((element) => {
-		if (element.id === id) {
-			let o = { ...element, wishlist: !element.wishlist };
-			a.push(o);
-		} else {
-			a.push(element);
-		}
+	await fetch(URL + `/${id}`, {
+		method: 'PATCH',
+		body: JSON.stringify({ wishlist: !product.wishlist }),
+		headers: { 'Content-Type': 'application/json' },
 	});
-
-	location.reload();
-
-	localStorage.setItem('products', JSON.stringify(a));
 }
