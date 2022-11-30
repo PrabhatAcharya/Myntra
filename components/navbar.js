@@ -3,7 +3,7 @@ function navbar() {
   
 			 
 	  <div  class="logo_div">
-		<a href="/index.html"> <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS357fHYAnvyZIqrnolaRs3MlCQO7PyKngEag&usqp=CAU"/></a> 
+		<a href="../pages/index.html"> <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS357fHYAnvyZIqrnolaRs3MlCQO7PyKngEag&usqp=CAU"/></a> 
 	  </div>
   
 	 <div class="menu_div">
@@ -418,7 +418,7 @@ function navbar() {
   
   
   <div id="main_div">      
-  <a  id="button"  href="#">STUDIO<sup>New</sup></a>
+  <a  id="button"  href="https://www.myntra.com/studio/home?appRoute=%7B%22url%22%3A%22%2Fstudio%2Fhome%22%7D">STUDIO<sup>New</sup></a>
 	 </div>
   </div>
   
