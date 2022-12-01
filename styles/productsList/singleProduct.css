@@ -65,6 +65,7 @@ h3 + p {
 	font-size: larger;
 	position: absolute;
 	transition: all 0.2s ease;
+	z-index: 2;
 }
 
 #wishListButton.addedToWishlist {

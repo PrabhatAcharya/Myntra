@@ -20,7 +20,7 @@
       ],
       "rating": 4.2,
       "count": 68.9,
-      "wishlist": false
+      "wishlist": true
     },
     {
       "id": 13,
@@ -108,7 +108,7 @@
       ],
       "rating": 4.2,
       "count": 38.2,
-      "wishlist": false
+      "wishlist": true
     },
     {
       "id": 25,
@@ -131,7 +131,8 @@
       ],
       "rating": 3.9,
       "count": 45,
-      "quantity": "2"
+      "quantity": "2",
+      "wishlist": false
     },
     {
       "id": 5,
@@ -196,7 +197,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1700944/2019/6/8/67f8fc06-3131-4ae9-a869-2b485f0aca3c1559989322742-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--4.jpg"
       ],
       "rating": 4.5,
-      "count": 41.5
+      "count": 41.5,
+      "wishlist": true
     },
     {
       "id": 10,
@@ -217,7 +219,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11363700/2020/3/2/f974edb1-e433-455c-bacd-9c29b3b6a2fe1583149435239-WROGN-Men-Tshirts-1401583149433605-5.jpg"
       ],
       "rating": 4.3,
-      "count": 1.2
+      "count": 1.2,
+      "wishlist": false
     },
     {
       "id": 11,
@@ -240,7 +243,8 @@
       ],
       "rating": 4.1,
       "count": 4.6,
-      "quantity": "1"
+      "quantity": "1",
+      "wishlist": true
     },
     {
       "id": 12,
@@ -305,7 +309,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10106295/2020/6/9/a976ebc3-264d-4bc7-9dc1-3e62c51188c91591680987923-HRX-by-Hrithik-Roshan-Men-Orange-Printed-Regular-Fit-Running-4.jpg"
       ],
       "rating": 4.2,
-      "count": 3.8
+      "count": 3.8,
+      "wishlist": true
     },
     {
       "id": 17,
@@ -412,7 +417,8 @@
       ],
       "rating": 4.3,
       "count": 7.8,
-      "wishlist": true
+      "wishlist": false,
+      "cart": true
     },
     {
       "id": 22,
@@ -433,7 +439,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/16478522/2021/12/12/67c34921-a004-4941-8c27-3e948338daa21639312521935Tshirts5.jpg"
       ],
       "rating": 9,
-      "count": 1
+      "count": 1,
+      "wishlist": false
     },
     {
       "id": 23,

@@ -6,14 +6,14 @@ export default function renderProducts(object, container) {
 	let card = document.createElement('div');
 	card.classList.add('card');
 	card.style.cursor = 'pointer';
-	card.addEventListener('click', (e) => {
-		addProductDescriptionToLS(object.id);
-		// window.location.href = '../productDescription/productDescription.html';
-	});
 
 	let img = document.createElement('img');
 	img.setAttribute('src', object.images[0]);
 	img.setAttribute('alt', object.productTitle);
+	img.addEventListener('click', async (e) => {
+		await addProductDescriptionToLS(object.id);
+		window.location.href = 'productDetails.html';
+	});
 
 	let bottom = document.createElement('div');
 
@@ -60,4 +60,5 @@ export default function renderProducts(object, container) {
 
 	card.append(img, bottom, rating, wishListButton);
 	container.append(card);
+	return card;
 }

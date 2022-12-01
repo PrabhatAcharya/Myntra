@@ -1,10 +1,11 @@
 import getData from '../utils/getData.js';
 import { navbar } from '../components/navbar.js';
+import URL from '../utils/url.js';
 document.getElementById('navbar').innerHTML = navbar();
 
 import renderProducts from '../utils/renderSingleProduct.js';
 
-const URL = 'http://localhost:3000/products';
+// const URL = 'http://localhost:3000/products';
 
 const productsSection = document.getElementsByName('gender');
 let productsFor = localStorage.getItem('productsFor')

@@ -1,6 +1,7 @@
-export default function addProductDescriptionToLS(id) {
-	let detailsOf = JSON.parse(localStorage.getItem('products')).filter((el) => {
-		return el.id === id;
-	});
-	localStorage.setItem('indProduct', JSON.stringify(detailsOf[0]));
+import getData from './getData.js';
+import URL from './url.js';
+
+export default async function addProductDescriptionToLS(id) {
+	const details = await getData(URL + `/${id}`);
+	localStorage.setItem('indProduct', JSON.stringify(details));
 }
