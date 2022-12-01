@@ -21,7 +21,7 @@ export default function renderProducts(object, container) {
 	p.innerHTML = object.productTitle;
 
 	let pMuted = document.createElement('p');
-	pMuted.innerHTML = object.productDetails;
+	pMuted.innerHTML = object.description;
 
 	let priceAfterDiscount;
 	let s = document.createElement('s');

@@ -1,5 +1,10 @@
-import data from '../data/data.js';
+import getData from '../utils/getData.js';
+import { navbar } from '../components/navbar.js';
+document.getElementById('navbar').innerHTML = navbar();
+
 import renderProducts from '../utils/renderSingleProduct.js';
+
+const URL = 'http://localhost:3000/products';
 
 const productsSection = document.getElementsByName('gender');
 let productsFor = localStorage.getItem('productsFor')
@@ -34,23 +39,23 @@ if (!productsFor) {
 	});
 }
 
-let products;
-if (localStorage.getItem('products')) {
-	products = JSON.parse(localStorage.getItem('products'));
-} else {
-	products = data.products;
-	localStorage.setItem('products', JSON.stringify(products));
-}
-
-const filtered = products.filter((el) => {
-	return el[productsFor];
-});
+const filterProducts = async (URL) => {
+	const products = await getData(URL);
+	const filtered = products.filter((el) => {
+		return el.gender === productsFor;
+	});
+	return filtered;
+};
 
 const container = document.getElementById('container');
 
-filtered.forEach((el) => {
-	renderProducts(el, container);
-});
+const renderAllProducts = async (data) => {
+	data.forEach((el) => {
+		renderProducts(el, container);
+	});
+};
+
+renderAllProducts(await filterProducts(URL));
 
 ///////////////////////////////
 ///Price range application
@@ -69,17 +74,28 @@ priceCap.forEach((el) => {
 	});
 });
 
-let priceCapApplied = new Set();
+let priceCapApplied = new Array();
 
-function applyPriceCap() {
-	let priceAppliedProducts = [];
+async function applyPriceCap() {
 	priceCap.forEach((el) => {
-		if (el.checked) priceCapApplied.add(el);
-		else if (priceCapApplied.has(el)) priceCapApplied.delete(el);
+		if (el.checked) {
+			priceCapApplied.push(el);
+			priceCapApplied = [...new Set(priceCapApplied)];
+		} else if (priceCapApplied.includes(el))
+			priceCapApplied.splice(priceCapApplied.indexOf(el), 1);
 	});
 
-	if (priceCapApplied.size) {
-		priceCapApplied.forEach((el) => {
+	var priceAppliedProducts = [];
+	const filtered = await filterProducts(URL);
+	// const productsWithDiscounts = await applyDiscounts();
+
+	// if (productsWithDiscounts.length > 0) filtered = productsWithDiscounts;
+
+	if (priceCapApplied.length > 0) {
+		console.log('true');
+		for (let i = 0; i < priceCapApplied.length; i++) {
+			let el = priceCapApplied[i];
+
 			if (el.id === '2000-3000') {
 				let ans = filtered.filter((el) => {
 					let priceAfterDiscount;
@@ -137,21 +153,26 @@ function applyPriceCap() {
 					renderProducts(el, container);
 				});
 			}
-		});
+		}
 	}
+	console.log(priceAppliedProducts);
 	return priceAppliedProducts;
 }
 
-////////////////////////////////
-///sorting of products
-////////////////////////////////
+// ////////////////////////////////
+// ///sorting of products
+// ////////////////////////////////
 
 const selectEl = document.getElementById('sorting');
 
-selectEl.addEventListener('change', (e) => {
+selectEl.addEventListener('change', async (e) => {
 	let dataToBeSorted;
-	if (applyPriceCap().length > 0) {
-		dataToBeSorted = applyPriceCap();
+	const filtered = await filterProducts(URL);
+	const priceApplied = await applyPriceCap();
+	// const discountsPrice = await applyDiscounts();
+
+	if (priceApplied.length > 0) {
+		dataToBeSorted = priceApplied;
 	} else {
 		dataToBeSorted = filtered;
 	}
@@ -160,8 +181,6 @@ selectEl.addEventListener('change', (e) => {
 		dataToBeSorted.sort((a, b) => {
 			return +b.discount - +a.discount;
 		});
-
-		console.log(filtered);
 
 		container.innerHTML = '';
 
@@ -187,8 +206,6 @@ selectEl.addEventListener('change', (e) => {
 			return +priceAfterDiscountB - +priceAfterDiscountA;
 		});
 
-		console.log(filtered);
-
 		container.innerHTML = '';
 
 		dataToBeSorted.forEach((el) => {
@@ -213,8 +230,6 @@ selectEl.addEventListener('change', (e) => {
 			return +priceAfterDiscountA - +priceAfterDiscountB;
 		});
 
-		console.log(filtered);
-
 		container.innerHTML = '';
 
 		dataToBeSorted.forEach((el) => {
@@ -223,9 +238,9 @@ selectEl.addEventListener('change', (e) => {
 	}
 });
 
-////////////////////////////////////////
-///filter on the basis of the discounts
-////////////////////////////////////////
+// // ////////////////////////////////////////
+// // ///filter on the basis of the discounts
+// // ////////////////////////////////////////
 
 const discounts = document.getElementsByName('discount');
 discounts.forEach((e) => {
@@ -234,15 +249,18 @@ discounts.forEach((e) => {
 	});
 });
 
-//////////////////////////////////////
-///Apply discounts function
-//////////////////////////////////////
+// //////////////////////////////////////
+// ///Apply discounts function
+// //////////////////////////////////////
 
-function applyDiscounts() {
+async function applyDiscounts() {
 	let dataToBeSorted;
 
-	if (applyPriceCap().length > 0) {
-		dataToBeSorted = applyPriceCap();
+	let filtered = await filterProducts(URL);
+	let priceApplied = await applyPriceCap();
+
+	if (priceApplied.length > 0) {
+		dataToBeSorted = priceApplied;
 	} else {
 		dataToBeSorted = filtered;
 	}
@@ -275,5 +293,7 @@ function applyDiscounts() {
 		renderProducts(e, container);
 	});
 
-	console.log(productsAfterDiscounts);
+	return productsAfterDiscounts;
+
+	// console.log(productsAfterDiscounts);
 }
