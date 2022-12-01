@@ -14,8 +14,6 @@
 //   }
 // }
 
-
-
 // var ar = [];
 // ar.push("https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/2510303/2018/6/6/e63b4b81-90c5-49d8-8a7d-79352e699cca1528285239602-HRX-by-Hrithik-Roshan-Men-Pack-of-3-Ankle-Length-Socks-21315-1.jpg");
 // ar.push("https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/13210360/2021/4/16/fa7a81ba-6e78-4970-9ec7-eaefbfb4353a1618531813062-Ustraa-Men-Strong-Hold-Wet-Look-Hair-Wax-100g-74116185318119-1.jpg");
@@ -24,7 +22,6 @@
 // ar.push("https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/13219906/2021/4/16/777f2734-0c1f-4924-89a6-da9cde388abd1618531838747-Ustraa-Men-Activated-Charcoal-Face-Scrub-2951618531837959-5.jpg")
 // ar.push("https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/productimage/2021/1/25/2e9cca00-e225-45d5-a618-6d593bb13d741611560093950-6.jpg");
 // ar.push("https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/productimage/2021/2/18/2401a7d2-e0c9-4743-81d4-195a2a0ee3381613641061371-3.jpg");
-
 
 // for (i = 0; ar.length > i; i++) {
 //   var img = new Image(200, 200);
@@ -62,31 +59,82 @@
 //     src.appendChild(img);
 //   }
 // }
-var obj={
-    id: 1,
-    productTitle: 'p2',
-    productDetails: 'this is a product details and this is written by harsh.',
-    images: [
-        'https://assets.myntassets.com/f_webp,dpr_2.8,q_60,w_210,c_limit,fl_progressive/assets/images/13765620/2021/6/15/99fb4822-6259-4de3-8269-277a932f2e7c1623754255227INVICTUSMenPrintedMaternityShirt1.jpg',
-    ],
-    rating: 4.5, //1-5 float
-    size: 'small', //small,medium,large
-    price: 4500, //in INR
-    category: '',
-    discount: 10,
-    brand: '',
-    women: true,
-    wishlist: true,
-    cart: false,
+
+import getData from '../utils/getData.js';
+const URL = 'http://localhost:3000/products';
+
+async function renderCartProducts() {
+	const data = await getData('http://localhost:3000/products');
+	const filtered = data.filter((e) => {
+		return e.cart;
+	});
+
+	document.getElementById(
+		'totalCount'
+	).innerHTML = `My Shopping Bag(${filtered.length} item)`;
+	document.getElementById('totalItem').innerHTML = filtered.length;
+
+	const cartProducts = document.getElementById('cartProducts');
+
+	filtered.forEach(async (e) => {
+		cartProducts.innerHTML += appendProduct(e);
+	});
+
+	filtered.forEach(async (e) => {
+		let select = document.querySelector(`#id-${e.id}  #quantity`);
+		select.selectedIndex = e.quantity ? e.quantity - 1 : 0;
+		console.log(select);
+	});
+
+	const quantities = document.getElementsByName('quantitySelect');
+
+	quantities.forEach((e) => {
+		e.addEventListener('change', async (el) => {
+			const res = fetch(URL + `/${el.target.getAttribute('data-prodId')}`, {
+				method: 'PATCH',
+				body: JSON.stringify({ quantity: el.target.value }),
+				headers: { 'Content-Type': 'application/json' },
+			});
+		});
+	});
+
+	const deleteButtons = document.getElementsByName('deleteButton');
+	console.log(deleteButtons);
+	deleteButtons.forEach((e) => {
+		e.addEventListener('click', async (e) => {
+			const res = fetch(URL + `/${e.target.getAttribute('data-prodId')}`, {
+				method: 'PATCH',
+				body: JSON.stringify({ cart: false }),
+				headers: { 'Content-Type': 'application/json' },
+			});
+		});
+	});
 }
 
+var obj = {
+	id: 1,
+	productTitle: 'p2',
+	productDetails: 'this is a product details and this is written by harsh.',
+	images: [
+		'https://assets.myntassets.com/f_webp,dpr_2.8,q_60,w_210,c_limit,fl_progressive/assets/images/13765620/2021/6/15/99fb4822-6259-4de3-8269-277a932f2e7c1623754255227INVICTUSMenPrintedMaternityShirt1.jpg',
+	],
+	rating: 4.5, //1-5 float
+	size: 'small', //small,medium,large
+	price: 4500, //in INR
+	category: '',
+	discount: 10,
+	brand: '',
+	women: true,
+	wishlist: true,
+	cart: false,
+};
 
 function appendPage() {
-    let pro = JSON.parse(localStorage.getItem("clickedProduct"))
-    let page = document.getElementById("center")
+	let pro = JSON.parse(localStorage.getItem('clickedProduct'));
+	let page = document.getElementById('center');
 
-    page.innerHTML = null;
-    page.innerHTML = ` <div class = "container4">
+	page.innerHTML = null;
+	page.innerHTML = ` <div class = "container4">
                     <h4>Available Offer</h4>
                     <p>
                         . 10% Instant Discount on SBI Credit Cards on a minimum spend of Rs 3000. TCA<br><br>
@@ -100,49 +148,85 @@ function appendPage() {
                 </div>
 
                 <div class = "total">
-                    <h3 style = "float: left; font-size: larger; color: black; font-weight: 700;">My Shopping Bag(1 item)</h3>
-                    <h3 style = "float: right; font-size: larger; color: black; font-weight: 700;">Total: Rs. ${Math.ceil(pro.oldprice * (100 - pro.discount) / 100)}</h3>
+                    <h3 id = "totalCount" style = "float: left; font-size: larger; color: black; font-weight: 700;"></h3>
+                    <h3 id = "totalLeft" style = "float: right; font-size: larger; color: black; font-weight: 700;"></h3>
                 </div>
                 <br><br><br>
-                ${appendProduct(obj)}
+                <div id= 'cartProducts'>
                     
-                
-               `
+                </div>
+               `;
 
-    let placeOrder = document.getElementById("placeOrder")
+	let placeOrder = document.getElementById('placeOrder');
 
-    placeOrder.innerHTML = `<div class = "grid-placeOrder">
+	placeOrder.innerHTML = `<div class = "grid-placeOrder">
                     <p class = "child1">COUPONS</p>
                     <p class = "child2"><b style = "color: black;">Apply Coupons</b></p>
                     <button class = "child3">APPLY</button>
                     <hr class = "child4">
-                    <p class = "child5">PRICE DETAILS(1 Item)</p>
+                    <p class = "child5">PRICE DETAILS(<span id="totalItem"> </span> Item)</p>
                     <p class = "child6">Total MRP</p>
-                    <p class = "child7">Rs. ${obj.price}</p>
+                    <p class = "child7" id="totalMrp">Rs. ${obj.price}</p>
                     <p class = "child8">Discount on MRP</p>
-                    <p class = "child9">- Rs. ${Math.ceil(obj.price * (obj.discount) / 100)}</p>
+                    <p class = "child9" id="totalDiscount">- Rs. </p>
                     <p class = "child10">Coupon Discount</p>
                     <button class = "child11">Apply Coupon</button>
                     <p class = "child12">Convenience Fee <b style = "color: #ff3f6c;;">Know More</b></p>
                     <p class = "child13"><s>Rs. 99 </s> Free</p>
                     <hr class = "child14">
                     <p class = "child15">Total Amount</p>
-                    <p  id = "totalAmount" class = "child16">Rs. ${Math.ceil(obj.price * (100 - obj.discount) / 100)}</p>
-                    <button class = "child17" onclick="showAddressPage()">PLACE ORDER</button>
-                </div>`
+                    <p  id = "totalAmount" class = "child16"></p>
+                        <button id="placeOrder" class = "child17">PLACE ORDER</button>
+                        </div>`;
 }
 
+appendPage();
+renderCartProducts();
+const totalAmount = document.getElementById('totalAmount');
 
+async function setTotalAmount() {
+	const data = await getData('http://localhost:3000/products');
+	const filtered = data.filter((e) => {
+		return e.cart;
+	});
+	let totalPrice = 0;
+	let totalMrp = 0;
+	filtered.forEach((el) => {
+		totalMrp += el.price;
+		totalPrice += el.quantity
+			? el.quantity *
+			  (el.discount
+					? Math.ceil(el.price * (100 - el.discount)) / 100
+					: el.price)
+			: el.discount
+			? Math.ceil(el.price * (100 - el.discount)) / 100
+			: el.price;
+	});
 
-appendPage()
+	totalPrice = Math.ceil(totalPrice);
 
-function showAddressPage() {
-    window.location.href = "address.html"
+	console.log(filtered);
+	document.getElementById(
+		'totalLeft'
+	).innerHTML = `Total : Rs. - ${totalPrice}`;
+
+	totalAmount.innerHTML = `Rs - ${totalPrice}`;
+
+	document.getElementById('totalMrp').innerHTML = `Rs. ${totalMrp}`;
+	document.getElementById('totalDiscount').innerHTML = `Rs. ${
+		totalMrp - totalPrice
+	}`;
 }
-function appendProduct(obj){
-    
-    return `        
-    <div class = "par">
+
+setTotalAmount();
+
+document.getElementById('placeOrder').addEventListener('click', (e) => {
+	window.location.href = 'address.html';
+});
+
+function appendProduct(obj) {
+	return `        
+    <div class = "par" id='id-${obj.id}'>
     <div id = "addImages">
 
         <img id = "img2" src = "${obj.images[0]}"/>
@@ -155,7 +239,9 @@ function appendProduct(obj){
                 <option value="SIZE:S">SIZE: S</option>
                 <option value="SIZE:Xl">SIZE: XL</option>
             </select>
-            <select name="quantity" id="quantity">
+            <select data-prodId = "${
+							obj.id
+						}" name="quantitySelect" id="quantity">
                 <option value="1">Qty: 1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -167,21 +253,19 @@ function appendProduct(obj){
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
+            <button name = "deleteButton" data-prodId = "${
+							obj.id
+						}" id="delete-${obj.id}">Remove</button>
             <h3>Discount: ${obj.discount}%</h3>
             <h6 style = "color: cornflowerblue;">Delivery By 28 JUL 2021</h6>
 
         </div>
         <div>
-            <p id = "discount"><s>Rs. ${obj.price}</s><br>Rs. ${Math.ceil(obj.price * (100 - obj.discount) / 100)}</p>
+            <p id = "discount"><s>Rs. ${obj.price}</s><br>Rs. ${Math.ceil(
+		(obj.price * (100 - obj.discount)) / 100
+	)}</p>
         </div>
     </div>
 </div>
-    `
+    `;
 }
-document.getElementById('quantity').addEventListener("change",function(e){
-    console.log(e.target.value);
-    const totalAmount=document.getElementById('totalAmount')
-    totalAmount.innerHTML=`Rs - ${e.target.value*obj.price}`
-})
-
-

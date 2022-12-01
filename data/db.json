@@ -50,6 +50,7 @@
       "productTitle": "Off-White Green Lightweight Printed Pure Cotton T-shirt",
       "price": 1450,
       "gender": "men",
+      "cart": false,
       "description": "Off-White Green Lightweight Printed Pure Cotton T-shirt",
       "brand": "WROGN",
       "color": "White Green",
@@ -63,7 +64,8 @@
       ],
       "rating": 4.1,
       "count": 1.8,
-      "wishlist": false
+      "wishlist": false,
+      "quantity": "3"
     },
     {
       "id": 1,
@@ -109,12 +111,13 @@
       "wishlist": false
     },
     {
-      "id": 5,
+      "id": 25,
       "categories": "tshirt",
       "size": "Sizes : 39, 40, 42, 44...",
       "productTitle": "Men White & Navy Blue Pure Cotton Striped Polo Collar T-shirt",
       "price": 359,
       "gender": "men",
+      "cart": false,
       "description": "White and navy blue Tshirt for men",
       "brand": "Roadster",
       "color": "white",
@@ -127,7 +130,8 @@
         "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14350098/2021/6/18/c72642c3-92a0-4495-8a64-31a49445206b1623996957736-Mast--Harbour-Men-Tshirts-3781623996957278-2.jpg"
       ],
       "rating": 3.9,
-      "count": 45
+      "count": 45,
+      "quantity": "2"
     },
     {
       "id": 5,
@@ -136,6 +140,7 @@
       "productTitle": "Men Light Blue Logo Printed Slim Fit Casual T-shirt",
       "price": 3299,
       "gender": "men",
+      "cart": true,
       "description": "Blue T-shirt for men",
       "brand": "Roadster",
       "color": "blue",
@@ -148,7 +153,8 @@
         "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/14590966/2021/9/29/0e145eb2-0cb6-4001-9a5f-24822cd773b31632910116725-Calvin-Klein-Jeans-Men-Tshirts-4161632910116207-5.jpg"
       ],
       "rating": 4.9,
-      "count": 40.9
+      "count": 40.9,
+      "quantity": "2"
     },
     {
       "id": 6,
@@ -223,6 +229,7 @@
       "description": "Men Grey Melange Self Design Welt Pocket T-shirt",
       "brand": "WROGN",
       "color": "Grey",
+      "cart": false,
       "discount": 50,
       "off_price": 1399,
       "images": [
@@ -232,7 +239,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1894413/2017/6/20/11497943671629-WROGN-Men-Grey-Melange-Self-Design-Round-Neck-T-shirt-881497943671356-5.jpg"
       ],
       "rating": 4.1,
-      "count": 4.6
+      "count": 4.6,
+      "quantity": "1"
     },
     {
       "id": 12,
@@ -266,6 +274,7 @@
       "brand": "WROGN",
       "color": "Black",
       "discount": 10,
+      "cart": true,
       "off_price": 13505,
       "images": [
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2478324/2018/9/26/3bb86908-c651-4685-97b8-e3f49f79f5091537945068438-WROGN-Men-Black-Printed-Polo-Collar-T-shirt-2411537945068393-1.jpg",
@@ -274,7 +283,8 @@
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2478324/2018/9/26/abd1ef47-3de7-4f9c-b9c2-59baadc43b811537944595325-WROGN-Men-Black-Printed-Polo-Collar-T-shirt-5611537944595071-4.jpg"
       ],
       "rating": 4.4,
-      "count": 1.5
+      "count": 1.5,
+      "quantity": "3"
     },
     {
       "id": 16,
@@ -371,6 +381,7 @@
       "brand": "HRX by Hrithik Roshan",
       "color": "",
       "discount": 50,
+      "cart": true,
       "off_price": 2698,
       "images": [
         "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/16322128/2021/12/6/2b06c467-701f-42cc-813a-f638add7bfa21638780247324-HRX-by-Hrithik-Roshan-Men-Tshirts-441638780246626-1.jpg",
