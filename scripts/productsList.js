@@ -53,6 +53,16 @@ const renderAllProducts = async (data) => {
 	data.forEach((el) => {
 		renderProducts(el, container);
 	});
+
+	const path = document.getElementById('path');
+	path.innerHTML = `Home / ${
+		productsFor[0].toUpperCase() + productsFor.slice(1)
+	} / ${data[0]?.categories.toUpperCase() || 'PRODUCT'} `;
+
+	document.getElementById('currentProduct').innerHTML =
+		data[0]?.categories.toUpperCase() || 'Product';
+
+	document.getElementById('selectedCount').innerHTML = data?.length || 0;
 };
 
 renderAllProducts(await filterProducts(URL));

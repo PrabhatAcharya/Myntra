@@ -43,9 +43,16 @@ h3 + p {
 	margin-right: 1rem !important;
 }
 
+.card h3 + p {
+	font-size: small;
+}
+
 #wishListButton {
-	/* display: flex; */
-	display: none;
+	display: flex;
+	/* display: none; */
+	translate: 0 1rem;
+	visibility: hidden;
+	opacity: 0;
 	gap: 0.2rem;
 	align-items: center;
 	justify-content: center;
@@ -57,6 +64,7 @@ h3 + p {
 	width: 100%;
 	font-size: larger;
 	position: absolute;
+	transition: all 0.2s ease;
 }
 
 #wishListButton.addedToWishlist {
@@ -66,6 +74,10 @@ h3 + p {
 
 .card:hover #wishListButton {
 	display: flex;
+	/* scale: 1; */
+	translate: 0;
+	visibility: visible;
+	opacity: 1;
 }
 
 #rating {
