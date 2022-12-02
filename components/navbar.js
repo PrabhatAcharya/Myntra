@@ -248,6 +248,7 @@ function navbar() {
 
 
 
+
 	  <div id="main_div">
 		  <a id="button" href="">HOME & LIVING</a>
 		  <div id="HomeLivingHover">
@@ -325,6 +326,7 @@ function navbar() {
 				  </div>
 
 			  </div>
+
 		  </div>
 	  </div>
 
