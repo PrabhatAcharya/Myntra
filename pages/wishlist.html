@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Wishlist</title>
+		<link
+			rel="stylesheet"
+			href="../styles/productsList/productsList.css" />
+		<link
+			rel="stylesheet"
+			href="../styles/productsList/singleProduct.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				padding: 0 10rem;
+			}
+			#wishListButton.addedToWishlist {
+				display: none !important;
+			}
+
+			.card {
+				height: auto;
+			}
+
+			#cross {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				width: 1rem;
+				height: 1rem;
+				top: 0.5rem;
+				right: 0.5rem;
+				padding: 0.5rem;
+				border-radius: 50%;
+				background-color: rgba(0, 0, 0, 0.2);
+				color: white;
+			}
+			.addToBag {
+				background-color: coral;
+				text-align: center;
+				color: white;
+				margin-top: 0.5rem;
+				padding: 0.5rem 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>My Wishlist <span id="wishlistCount"></span></h2>
+		<div id="container"></div>
+	</body>
+	<script type="module">
+		import renderSingleProduct from '../utils/renderSingleProduct.js';
+		import getData from '../utils/getData.js';
+
+		const productsContainer = document.getElementById('container');
+		const renderWishlist = async () => {
+			let data = await getData('http://localhost:3000/products');
+
+			data = data.filter((e) => {
+				return e.wishlist;
+			});
+
+			data.forEach((el) => {
+				const card = renderSingleProduct(el, productsContainer);
+				const cross = document.createElement('p');
+				cross.id = 'cross';
+				cross.innerHTML = 'X';
+				card.append(cross);
+				cross.addEventListener('click', async (e) => {
+					await fetch('http://localhost:3000/products' + `/${el.id}`, {
+						method: 'PATCH',
+						body: JSON.stringify({ wishlist: false }),
+						headers: { 'Content-Type': 'application/json' },
+					});
+				});
+				const addToBag = document.createElement('p');
+				addToBag.classList.add('addToBag');
+				addToBag.innerHTML = 'Add To Bag';
+				addToBag.addEventListener('click', async (e) => {
+					await fetch('http://localhost:3000/products' + `/${el.id}`, {
+						method: 'PATCH',
+						body: JSON.stringify({ cart: true, wishlist: false }),
+						headers: { 'Content-Type': 'application/json' },
+					});
+				});
+				card.append(addToBag);
+			});
+		};
+
+		renderWishlist();
+	</script>
+</html>
