@@ -1,5 +1,5 @@
 function navbar() {
-	return `    <div class="parent-box-1">
+	return    ` <div class="parent-box-1">
   
 			 
 	  <div  class="logo_div">
@@ -38,79 +38,79 @@ function navbar() {
 						</div>
 				  
 				  <div id="d3">
-					 <h5 class="h5"><a href="/">Bottom Wear</a></h5>
-					 <ul>
-					  <li><a href="#">Jeans</a></li>
-					  <li><a href="#">Causal Trousers</a></li>
-					  <li><a href="#">Formal Trousers</a></li>
-					  <li><a href="#">Sports</a></li>
-					  <li><a href="#">Track Pants & joggers</a></li>
-					 </ul>
-  
-					 </div> 
-					 <div id="d4">
-					 <h5 class="h5"><a href="/"></a>Innerwear & Joggers</h5>
-					 <ul>
-					  <li><a href="#">Briefs & Trunks</a></li>
-					  <li><a href="#">Boxers</a></li>
-					  <li><a href="#">Vests</a></li>
-					  <li><a href="#">Sleepwear & Loungewear</a></li>
-					  <li><a href="#">Thermals</a></li>
-					 </ul>
-					 <h5 class="h5"><a href="/"></a>Plus Size</h5>
-  
-				   </div> 
-				 
-  
-				 <div id="d5">
-				 <h5 class="h5"><a href="/">Footwear</a></h5>
-				 <ul>
-					 <li><a href="#">Casual Shoes</a></li>
-					 <li><a href="#">Sports Shoes</a></li>
-					 <li><a href="#">Formal Shoes</a></li>
-					 <li><a href="#">Sneakers</a></li>
-					 <li><a href="#">Sandals & Floaters</a></li>
-					 <li><a href="#">Flip Flops</a></li>
-					 <li><a href="#">Socks</a></li>
-				 </ul>
-  
-				 </div>
-				 <div id="d6">
-				 <h5 class="h5"><a href="#">Personal care & Grooming</a></h5>
-				 <h5 class="h5"><a href="#">Sunglass & Frames</a></h5>
-				 <h5 class="h5"><a href="#">Watches</a></h5>
-			 </div>
-				 
-			   </div>
-			</div>
-		  
-		</div>
-	
-  
-  
-  
-  
-		 <div id="main_div">
-		 <a id="button"  href="#">WOMEN</a>
-		 <div id="WomensHover">
-		   <div id="b">
-			  <div class="div" id="d1">
-				  <h5 class="h5"><a href="#">Indian & Fusion wear</a></h5>
+					  <h5 class="h5"><a href="/">Bottom Wear</a></h5>
 					  <ul>
-						 <li><a href="#">Kurtas & Suits</a></li>
-						 <li><a href="#>Kurtis,Tunics & Tops</a></li>
+						  <li><a href="#">Jeans</a></li>
+						  <li><a href="#">Causal Trousers</a></li>
+						  <li><a href="#">Formal Trousers</a></li>
+						  <li><a href="#">Sports</a></li>
+						  <li><a href="#">Track Pants & joggers</a></li>
+					  </ul>
+
+				  </div>
+				  <div id="d4">
+					  <h5 class="h5"><a href="/"></a>Innerwear & Joggers</h5>
+					  <ul>
+						  <li><a href="#">Briefs & Trunks</a></li>
+						  <li><a href="#">Boxers</a></li>
+						  <li><a href="#">Vests</a></li>
+						  <li><a href="#">Sleepwear & Loungewear</a></li>
+						  <li><a href="#">Thermals</a></li>
+					  </ul>
+					  <h5 class="h5"><a href="/"></a>Plus Size</h5>
+
+				  </div>
+
+
+				  <div id="d5">
+					  <h5 class="h5"><a href="/">Footwear</a></h5>
+					  <ul>
+						  <li><a href="#">Casual Shoes</a></li>
+						  <li><a href="#">Sports Shoes</a></li>
+						  <li><a href="#">Formal Shoes</a></li>
+						  <li><a href="#">Sneakers</a></li>
+						  <li><a href="#">Sandals & Floaters</a></li>
+						  <li><a href="#">Flip Flops</a></li>
+						  <li><a href="#">Socks</a></li>
+					  </ul>
+
+				  </div>
+				  <div id="d6">
+					  <h5 class="h5"><a href="#">Personal care & Grooming</a></h5>
+					  <h5 class="h5"><a href="#">Sunglass & Frames</a></h5>
+					  <h5 class="h5"><a href="#">Watches</a></h5>
+				  </div>
+
+			  </div>
+		  </div>
+
+	  </div>
+
+
+
+
+
+	  <div id="main_div">
+		  <a id="button" href="#">WOMEN</a>
+		  <div id="WomensHover">
+			  <div id="b">
+				  <div class="div" id="d1">
+					  <h5 class="h5"><a href="#">Indian & Fusion wear</a></h5>
+					  <ul>
+						  <li><a href="#">Kurtas & Suits</a></li>
+						  <li><a href="">Kurtis,Tunics & Tops</a></li>
 						  <li><a href="#">Ethnic Wear</a></li>
 						  <li><a href="#">Leggings, Salwars & Churidars</a></li>
-						   <li><a href="#">Skirts & Palazzos</a></li>
+						  <li><a href="#">Skirts & Palazzos</a></li>
 						  <li><a href="#">Sarees</a></li>
 						  <li><a href="#">Dress Materials</a></li>
 						  <li><a href="#">Lehenga Cholis</a></li>
-						 <li><a href="#">Dupattas & Shawls</a></li>
+						  <li><a href="#">Dupattas & Shawls</a></li>
 					  </ul>
-					  </div>
-					  <div  id="d2">
-					   <h5 class="h5"><a href="#">Western wear</a></h5>
-					   <ul>
+				  </div>
+				  <div id="d2">
+					  <h5 class="h5"><a href="#">Western wear</a></h5>
+					  <ul>
 						  <li><a href="#">Dresses</a></li>
 						  <li><a href="#">Tops</a></li>
 						  <li><a href="#">Tshirts</a></li>
@@ -120,127 +120,129 @@ function navbar() {
 						  <li><a href="#">Co-ords</a></li>
 						  <li><a href="#">Playsuits</a></li>
 					  </ul>
-				   </div>
-			 <div id="d3">
-				<h5 class="h5"><a href="#">Sport & Active wear</a></h5>
-				<ul>
-				 <li><a href="#">Clothing</a></li>
-				 <li><a href="#">Footwear</a></li>
-				 <li><a href="#">Sports Accessories</a></li>
-				 <li><a href="#">Sports Equipment</a></li>
-				</ul>
-				</div>
-				<div id="d4">
-				<h5 class="h5"><a href="#"></a>Beauty & Personal care</h5>
-				<ul>
-				 <li><a href=#">Makeup</a></li>
-				 <li><a href="#">Skincare</a></li>
-				 <li><a href="#">Premium Beauty</a></li>
-				 <li><a href="#">Lipsticks</a></li>
-				 <li><a href="#">Fragrances</a></li>
-				</ul>
-				<h5 class="h5"><a href="#"></a>Plus Size</h5>
-			  </div>
-			<div id="d5">
-			<h5 class="h5"><a href="#">Lingerie & Sleepwear</a></h5>
-			<ul>
-				<li><a href="#">Bra</a></li>
-				<li><a href="#">Briefs</a></li>
-				<li><a href="#">Shapewear</a></li>
-				<li><a href="#">Sleepwear & Loungewear</a></li>
-				<li><a href="#">Swimwear</a></li>
-				<li><a href="#">Camisoles & Thermals</a></li>
-				<li><a href="#">Socks</a></li>
-			</ul>
-			</div>
-		   
-		  </div>
-	   </div>
-	 </div>
-  
-  
-  
-  
-  
-  
-	 <div id="main_div">
-	 <a id="button"  href="#">KIDS</a>
-	 <div id="KidsHover">
-	   <div id="b">
-		  <div class="div" id="d1">
-			  <h5 class="h5"><a href="#">Boys Clothing</a></h5>
-				  <ul>
-					 <li><a href="#">T-Shirts</a></li>
-					 <li><a href="#">Shirts</a></li>
-					  <li><a href="#">Shorts</a></li>
-					  <li><a href="#">Jeans</a></li>
-					   <li><a href="#">Trousers</a></li>
-					  <li><a href="#">Clothing Sets</a></li>
-					  <li><a href="#">Ethnic Wear</a></li>
-					  <li><a href="#">Track Pants & Pyjamas</a></li>
-					 <li><a href="#">Jacket, Sweater & Sweatshirts</a></li>
-					 <li><a href="#">Party Wear</a></li>
-					 <li><a href="#">Innerwear & Thermals</a></li>
-					
-				  </ul>
 				  </div>
-				  <div  id="d2">
-				   <h5 class="h5"><a href="#">Girls Clothing</a></h5>
-				   <ul>
-					  <li><a href="#">Dresses</a></li>
-					  <li><a href="#">Tops</a></li>
-					  <li><a href="#">Tshirts</a></li>
-					  <li><a href="#">Clothing Sets</a></li>
-					  <li><a href="#">Lehenga choli</a></li>
-					  <li><a href="#">Kurta Sets</a></li>
-					  <li><a href="#">Party wear</a></li>
-					  <li><a href="#">Dungarees & Jumpsuits</a></li>
-					  <li><a href="#">Skirts & shorts</a></li>
-					  <li><a href="#">Tights & Leggings</a></li>
-				   
-				  </ul>
-			   </div>
-		 <div id="d3">
-			<h5 class="h5"><a href="/">Footwear</a></h5>
-			<ul>
-			 <li><a href="#">Casual Shoes</a></li>
-			 <li><a href="#">Flipflops</a></li>
-			 <li><a href="/">Sports Shoes</a></li>
-			 <li><a href="/">Flats</a></li>
-			 <li><a href="/">Sandals</a></li>
-			 <li><a href="/">Heels</a></li>
-			 <li><a href="/">School Shoes</a></li>
-			 <li><a href="/">Socks</a></li>
-			</ul>
-			</div>
-			<div id="d4">
-			<h5 class="h5"><a href="#"></a>Infants</h5>
-			<ul>
-			 <li><a href="#">Bodysuits</a></li>
-			 <li><a href="#">Rompers & Sleepsuits</a></li>
-			 <li><a href="#">Clothing Sets</a></li>
-			 <li><a href="#">Tshirts & Tops</a></li>
-			 <li><a href="#">Dresses</a></li>
-			 <li><a href="#">Bottom wear</a></li>
-			 <li><a href="#">Winter Wear</a></li>
-			 <li><a href="#">Innerwear & Sleepwear</a></li>
-			 <li><a href="#">Infant Care</a></li>
-			</ul>
-			<h5 class="h5"><a href="#"></a>Plus Size</h5>
+				  <div id="d3">
+					  <h5 class="h5"><a href="#">Sport & Active wear</a></h5>
+					  <ul>
+						  <li><a href="#">Clothing</a></li>
+						  <li><a href="#">Footwear</a></li>
+						  <li><a href="#">Sports Accessories</a></li>
+						  <li><a href="#">Sports Equipment</a></li>
+					  </ul>
+				  </div>
+				  <div id="d4">
+					  <h5 class="h5"><a href="#"></a>Beauty & Personal care</h5>
+					  <ul>
+						  <li><a href=#">Makeup</a></li>
+						  <li><a href="#">Skincare</a></li>
+						  <li><a href="#">Premium Beauty</a></li>
+						  <li><a href="#">Lipsticks</a></li>
+						  <li><a href="#">Fragrances</a></li>
+					  </ul>
+					  <h5 class="h5"><a href="#"></a>Plus Size</h5>
+				  </div>
+				  <div id="d5">
+					  <h5 class="h5"><a href="#">Lingerie & Sleepwear</a></h5>
+					  <ul>
+						  <li><a href="#">Bra</a></li>
+						  <li><a href="#">Briefs</a></li>
+						  <li><a href="#">Shapewear</a></li>
+						  <li><a href="#">Sleepwear & Loungewear</a></li>
+						  <li><a href="#">Swimwear</a></li>
+						  <li><a href="#">Camisoles & Thermals</a></li>
+						  <li><a href="#">Socks</a></li>
+					  </ul>
+				  </div>
+
+			  </div>
 		  </div>
-		<div id="d5">
-		<h5 class="h5"><a href="#">Kids Accessories</a></h5>
-		<ul>
-			<li><a href="#">Bags & Backpacks</a></li>
-			<li><a href="#">Watches</a></li>
-			<li><a href="#">Jewellery & Hair accessory</a></li>
-			<li><a href="#">Sunglasses</a></li>
-			<li><a href="#">Masks & Protective Gears</a></li>
-			<li><a href="#">Caps & Hats</a></li>
-		   
-		</ul>
-		</div>
-	 
+	  </div>
+
+
+
+
+
+
+	  <div id="main_div">
+		  <a id="button" href="#">KIDS</a>
+		  <div id="KidsHover">
+			  <div id="b">
+				  <div class="div" id="d1">
+					  <h5 class="h5"><a href="#">Boys Clothing</a></h5>
+					  <ul>
+						  <li><a href="#">T-Shirts</a></li>
+						  <li><a href="#">Shirts</a></li>
+						  <li><a href="#">Shorts</a></li>
+						  <li><a href="#">Jeans</a></li>
+						  <li><a href="#">Trousers</a></li>
+						  <li><a href="#">Clothing Sets</a></li>
+						  <li><a href="#">Ethnic Wear</a></li>
+						  <li><a href="#">Track Pants & Pyjamas</a></li>
+						  <li><a href="#">Jacket, Sweater & Sweatshirts</a></li>
+						  <li><a href="#">Party Wear</a></li>
+						  <li><a href="#">Innerwear & Thermals</a></li>
+
+					  </ul>
+				  </div>
+				  <div id="d2">
+					  <h5 class="h5"><a href="#">Girls Clothing</a></h5>
+					  <ul>
+						  <li><a href="#">Dresses</a></li>
+						  <li><a href="#">Tops</a></li>
+						  <li><a href="#">Tshirts</a></li>
+						  <li><a href="#">Clothing Sets</a></li>
+						  <li><a href="#">Lehenga choli</a></li>
+						  <li><a href="#">Kurta Sets</a></li>
+						  <li><a href="#">Party wear</a></li>
+						  <li><a href="#">Dungarees & Jumpsuits</a></li>
+						  <li><a href="#">Skirts & shorts</a></li>
+						  <li><a href="#">Tights & Leggings</a></li>
+
+					  </ul>
+				  </div>
+				  <div id="d3">
+					  <h5 class="h5"><a href="/">Footwear</a></h5>
+					  <ul>
+						  <li><a href="#">Casual Shoes</a></li>
+						  <li><a href="#">Flipflops</a></li>
+						  <li><a href="/">Sports Shoes</a></li>
+						  <li><a href="/">Flats</a></li>
+						  <li><a href="/">Sandals</a></li>
+						  <li><a href="/">Heels</a></li>
+						  <li><a href="/">School Shoes</a></li>
+						  <li><a href="/">Socks</a></li>
+					  </ul>
+				  </div>
+				  <div id="d4">
+					  <h5 class="h5"><a href="#"></a>Infants</h5>
+					  <ul>
+						  <li><a href="#">Bodysuits</a></li>
+						  <li><a href="#">Rompers & Sleepsuits</a></li>
+						  <li><a href="#">Clothing Sets</a></li>
+						  <li><a href="#">Tshirts & Tops</a></li>
+						  <li><a href="#">Dresses</a></li>
+						  <li><a href="#">Bottom wear</a></li>
+						  <li><a href="#">Winter Wear</a></li>
+						  <li><a href="#">Innerwear & Sleepwear</a></li>
+						  <li><a href="#">Infant Care</a></li>
+					  </ul>
+					  <h5 class="h5"><a href="#"></a>Plus Size</h5>
+				  </div>
+				  <div id="d5">
+					  <h5 class="h5"><a href="#">Kids Accessories</a></h5>
+					  <ul>
+						  <li><a href="#">Bags & Backpacks</a></li>
+						  <li><a href="#">Watches</a></li>
+						  <li><a href="#">Jewellery & Hair accessory</a></li>
+						  <li><a href="#">Sunglasses</a></li>
+						  <li><a href="#">Masks & Protective Gears</a></li>
+						  <li><a href="#">Caps & Hats</a></li>
+
+					  </ul>
+				  </div>
+
+			  </div>
+		  </div>
 	  </div>
    </div>
   </div>
@@ -421,85 +423,77 @@ function navbar() {
   <a  id="button"  href="https://www.myntra.com/studio/home?appRoute=%7B%22url%22%3A%22%2Fstudio%2Fhome%22%7D">STUDIO<sup>New</sup></a>
 	 </div>
   </div>
-  
-  
-  </div>
-  <!-- parent-box-1 end -->
-  
-  <div class="parent-box-2">
-  
-  <div class="div1">
-	  <input  type="text" name="" id="search" placeholder="Search for products, brands and more">
-	  
-		  <span><i class="fa-solid fa-magnifying-glass">&nbsp;</i></span> 
-		  
-		  <div id="two" ></div>
-  
+
+
+</div>
+<!-- parent-box-1 end -->
+
+<div class="div1">
+  <input type="text" name="" id="search" placeholder="Search for products, brands and more">
+
+  <span><i class="fa-solid fa-magnifying-glass"></i></span>
+
+  <div id="two">
   </div>
 
-  <div id="other_div">
-	  <div>
-   
-	 
-	   
-	 
-  
-		  <div id="main_div">&nbsp&nbsp&nbsp&nbsp
-		  <a href=""><i class="fa-regular fa-user"  id="i2" ></i></a>
-		  <h5 id="profile_tag"><a  href="#">Profile</a></h5>
-		  <div id="ProfileHover">
-			<div id="b">
-			   <div class="div" id="d1">
-				   <h5 id="lh5">Welcome</h5>
-				   <p id="lp">To access account and manage order</p>
-				   <button id="ls"><a id="logincss"href="../pages/loginSignup.html">LOGIN / SIGNUP</a></button>
-				   <br>
-				   <hr>
-					   <ul>
-						  <li><a href="#">Order</a></li>
-						  <li><a href="#">Wishlist</a></li>
-						   <li><a href="#">Gift card</a></li>
-						   <li><a href="#">Contact us</a></li>
-							<li><a href="#">Myntra Insider <button id="insider_span">New</button></a></li>
-						
-					   </ul>
-					  
-					  <hr>
-  
-					<ul>
-						   <li><a href="#">Myntra credit</a></li>
-							 <li><a href="#">Coupons</a></li>
-						   <li><a href="#">Saved cards</a></li>
-						   <li><a href="#">Saved Address</a></li
-				   </ul>
-					  
-  
-  
-					   </div>
-					  
-			  
-		 
-			 
-		   </div>
+</div>
+<div id="main_div" style="background-color: blue">
+
+  <div>
+	  <a href=""><i class="fa-regular fa-user" id="i2"></i></a>
+	  <h5 id="profile_tag"><a href="#">Profile</a></h5>
+	  <div id="ProfileHover">
+		  <div id="b">
+			  <div class="div" id="d1">
+				  <h5 id="lh5">Welcome</h5>
+				  <p id="lp">To access account and manage order</p>
+				  <button id="ls"><a id="logincss" href="#">LOGIN / SIGNUP</a></button>
+				  <br>
+				  <hr>
+				  <ul>
+					  <li><a href="#">Order</a></li>
+					  <li><a href="#">Wishlist</a></li>
+					  <li><a href="#">Gift card</a></li>
+					  <li><a href="#">Contact us</a></li>
+					  <li><a href="#">Myntra Insider <button id="insider_span">New</button></a></li>
+
+				  </ul>
+
+				  <hr>
+
+				  <ul>
+					  <li><a href="#">Myntra credit</a></li>
+					  <li><a href="#">Coupons</a></li>
+					  <li><a href="#">Saved cards</a></li>
+					  <li><a href="#">Saved Address</a></li>
+				  </ul>
+
+
+
+			  </div>
 		  </div>
-		  </div>
-		  
-  
+
 	  </div>
-	
-	  <div>
-		  <a href="#"><i class="fa-regular fa-heart"  id="i1"></i></a><br>
-		<a id="wishlist_tag" href="#">Whishlist</a>
-	  </div>
-  
-	  <div>
-		<a id="count" href=""> <i class="fa-solid fa-bag-shopping font " id="i1"><span  id="count_cart">&nbsp&nbsp;</span></i></a>
-		 <br>  <a id="cart_tag" href="">Bag</a>
-	  </div>
+
   </div>
   
-  </div> 
+
+
+
+  <div style="background:blue">
+	  <a href="#"><i class="fa-regular fa-heart" id="i1"></i></a><br>
+	  <a id="wishlist_tag" href="#">Whishlist</a>
+  </div>
+
+  <div>
+	  <a id="count" href=""> <i class="fa-solid fa-bag-shopping font " id="i1"><span
+				  id="count_cart">&nbsp&nbsp;</span></i></a>
+	  <br> <a id="cart_tag" href="">Bag</a>
+  </div>
+
+
+</div>
   
   `;
-  }
-  export {navbar};
+}
+export { navbar };

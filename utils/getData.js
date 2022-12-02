@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/products';
+import URL from './url.js';
 
 const getData = async (URL) => {
 	const res = await fetch(URL);

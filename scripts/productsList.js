@@ -1,10 +1,11 @@
 import getData from '../utils/getData.js';
 import { navbar } from '../components/navbar.js';
+import URL from '../utils/url.js';
 document.getElementById('navbar').innerHTML = navbar();
 
 import renderProducts from '../utils/renderSingleProduct.js';
 
-const URL = 'http://localhost:3000/products';
+// const URL = 'http://localhost:3000/products';
 
 const productsSection = document.getElementsByName('gender');
 let productsFor = localStorage.getItem('productsFor')
@@ -53,6 +54,16 @@ const renderAllProducts = async (data) => {
 	data.forEach((el) => {
 		renderProducts(el, container);
 	});
+
+	const path = document.getElementById('path');
+	path.innerHTML = `Home / ${
+		productsFor[0].toUpperCase() + productsFor.slice(1)
+	} / ${data[0]?.categories.toUpperCase() || 'PRODUCT'} `;
+
+	document.getElementById('currentProduct').innerHTML =
+		data[0]?.categories.toUpperCase() || 'Product';
+
+	document.getElementById('selectedCount').innerHTML = data?.length || 0;
 };
 
 renderAllProducts(await filterProducts(URL));
