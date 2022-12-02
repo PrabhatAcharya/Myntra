@@ -57,7 +57,7 @@ body {
 	top: 0;
 	/* overflow:visible; */
 	z-index: 1;
-	position: sticky;
+	position: fixed;
 }
 
 .parent-box-1 {

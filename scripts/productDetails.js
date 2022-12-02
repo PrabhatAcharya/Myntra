@@ -1,29 +1,26 @@
-import data from '../data/data.js';
-console.log(data);
-
-let productDetailContainer = document.getElementById("productDetailContainer");
+let productDetailContainer = document.getElementById('productDetailContainer');
 
 const displayData = () => {
+	let product = JSON.parse(localStorage.getItem('indProduct'));
 
-  let product = JSON.parse(localStorage.getItem("indProduct"));
+	console.log(product);
 
-  let productDetailParent = document.getElementById("productDetailParent");
+	let productDetailParent = document.getElementById('productDetailParent');
 
-  let Left = document.getElementById("left");
-  let Right = document.getElementById("right");
+	let Left = document.getElementById('left');
+	let Right = document.getElementById('right');
 
-  let p = document.createElement("p");
-  p.setAttribute("class", "produtPara");
-  p.innerHTML = `Home / Clothing / Men Clothing / Tshirts /<span> ${product.brand}</span>/<span> ${product.productTitle}</span>`;
-  productDetailContainer.append(p);
+	let p = document.createElement('p');
+	p.setAttribute('class', 'produtPara');
+	p.innerHTML = `Home / Clothing / Men Clothing / Tshirts /<span> ${product.brand}</span>/<span> ${product.productTitle}</span>`;
+	productDetailContainer.append(p);
 
-  Left.innerHTML = `<img src="${product.images}" alt="">
+	Left.innerHTML = `<img src="${product.images}" alt="">
   <img src="${product.images}" alt="">
   <img src="${product.images}" alt="">
   <img src="${product.images}" alt="">`;
 
-
-  Right.innerHTML = ` <h3 class="poductName">${product.brand}</h3>
+	Right.innerHTML = ` <h3 class="poductName">${product.brand}</h3>
     <h3 class="ProductTitle">${product.productTitle}</h3>
     <div class="ratebox">
     <p class="productRating">${product.rating}</p>
@@ -89,8 +86,8 @@ const displayData = () => {
     <hr>
   `;
 
-  productDetailParent.append(Left, Right);
-  productDetailContainer.append(productDetailParent);
-}
+	productDetailParent.append(Left, Right);
+	productDetailContainer.append(productDetailParent);
+};
 
 displayData();
