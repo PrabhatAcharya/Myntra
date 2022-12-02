@@ -2,6 +2,9 @@
 import {navbar} from "../components/navbar.js";
 document.getElementById("navbar").innerHTML=navbar();
 
+import { footer } from "../components/footer.js";
+document.getElementById("footerDiv").innerHTML=footer();
+
 const  imageIndexPage=[
     {
         image:"https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/11/21/975768bf-f076-45d3-9502-c8d4a33990a21669040716553-Sweatshirts---Trousers.jpg"

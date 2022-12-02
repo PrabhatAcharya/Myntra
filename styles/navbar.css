@@ -5,7 +5,7 @@ body{
 }
 
 
-/* #loading{
+#loading{
     position:fixed;
     width: 100px;
     height: 100vh;
@@ -14,11 +14,11 @@ body{
     visibility: visible;
 
 
-} */
+}
 
 
 
-/* search functionality */
+/* searchbar result debouncing herefunctionality */
 
 #two
 {
@@ -32,12 +32,13 @@ body{
     height: auto;
     /* height: 340px; */
     max-height: 340px;
-    margin-left: -39px;
+    /* margin-left: -39px; */
     z-index: 1;
     overflow:hidden;
     border: black;
     border-radius: 0px 0px 4px 4px;
     overflow:auto;
+    /* border: 5px solid brown; */
     
     
 }
@@ -71,7 +72,7 @@ body{
     box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
     background-color: #FFFFFF;
     width:100%;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     top:0;
     /* overflow:visible; */
@@ -113,11 +114,15 @@ body{
     /* margin-left:0.5%;
     margin-right:20%; */
     display: flex;
-    width: 600px;
+    
     justify-content: space-between;
-    flex-wrap: nowrap;
-    height: 100%;
-    align-items: end;
+
+    /* height: 100%; */
+    align-items: center;
+    position: relative;
+max-width: 100vw;
+display: flex;
+gap: 3rem;
    
 }
 
@@ -141,27 +146,29 @@ body{
     align-items: center;
     width:50%;
     height: 100%;
-
+    /* border: 5px solid black; */
+    /* padding: 1%; */
+ flex-wrap: wrap;
 }
-
 
 .div1>span{
   /* border-right: 3px solid grey; */
-  margin-left: -440px;
+  margin-left: -30em;
   text-align:center;
   cursor:pointer;
   /* color:hotpink; */
 }
 
 #search{
-    height: 42px;
-    width: 400px;
+    height: 3em;
+    width: 30em;
     border-radius: 7px;
     background-color: rgb(247, 247, 252);
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
-    padding-left: 50px;
+    padding-left: 2em;
     border-left: 1px solid grey;
     border:0;
+    /* border: 2px solid green; */
 }
 
 #search:focus{
@@ -176,18 +183,26 @@ body{
 
 
 #other_div{
-    /* border:1px solid gold; */
+    /* border:1px solid blue; */
     display: flex;
-    margin-left: 70px;
+    margin-left: 3%;
 
     justify-content: space-evenly;
-    width: 240px;
+    height: 4em;
+    width: 14em;
     align-items: center;
     text-align: center;
-    height:100%;
+    /* height:100%; */
+    /* padding: auto; */
+    gap: 8px;
+flex-flow: wrap;
 
 
 }
+/* #profile_tag>a{
+    font-size: 16px;
+    font-weight: 400; 
+} */
 #other_div>div{
     /* border:1px solid red; */
     height:max-content;
@@ -235,25 +250,13 @@ body{
     font-size: 15px;
     font-weight: 500;
     font-size: 14px;
-    /*  
-    padding: 0 17px 28px;
-    text-align: center;
-    text-decoration: none;
-    
-    letter-spacing: .3px;
-    color: #282c3f;
-    border-bottom: none;
-    -webkit-transition: left .2s ease-out,width .2s ease-out;
-    transition: left .2s ease-out,width .2s ease-out;
-    font-weight: 500;
-    text-transform: uppercase;*/
-  
+     
 }
 
 #button:hover{
     color:hotpink;
 }
-
+/* ///giving hover efect */
 #MensHover,#WomensHover,#KidsHover,#HomeLivingHover,#BeautyHover,#ProfileHover{
     background-color:white;
     /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
@@ -349,22 +352,26 @@ body{
 
 #i2{
     font-size: 17px;
+    margin-left:24px;
+    /* border:2px solid black */
+    
     /* color:rgb(235, 53, 144); */
     /* margin-bottom:-9px; */
 }
 
 #profile_tag{
     text-decoration: none;
-    font-size: 17px;
+    font-size: 14px;
     color:black;
     margin: auto;
+    
 }
 
 #profile_tag>a{
     font-size: 14px;
      color:black;
      text-decoration: none;
-     font-weight: 250px;
+     font-weight:bold;
      line-height: 2px;
    
  }
