@@ -33,9 +33,16 @@ function logincheck() {
 	let mobile = localStorage.getItem('mobile');
 	let confirmpassword = localStorage.getItem('confirmpass');
 
-	if (loginmobile === mobile && loginpassword === confirmpassword) {
-		alert('login successfull');
-	} else {
-		alert('wrong details');
-	}
+  if(loginmobile != mobile ){
+    alert("acount doesnot exist , kindly register yourself first")
+    openregister();
+  }
+
+  if(loginmobile===mobile && loginpassword===confirmpassword){
+    alert("login successfull")
+    window.location.href="../pages/index.html"
+  }
+  else{
+    alert("wrong details");
+  }
 }

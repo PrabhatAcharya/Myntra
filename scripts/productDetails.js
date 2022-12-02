@@ -1,5 +1,4 @@
 import data from '../data/data.js';
-
 import { navbar } from '../components/navbar.js';
 document.getElementById('header').innerHTML = navbar();
 console.log(data);
@@ -7,26 +6,26 @@ console.log(data);
 let productDetailContainer = document.getElementById("productDetailContainer");
 
 const displayData = () => {
+	let product = JSON.parse(localStorage.getItem('indProduct'));
 
-  let product = JSON.parse(localStorage.getItem("indProduct"));
+	console.log(product);
 
-  let productDetailParent = document.getElementById("productDetailParent");
+	let productDetailParent = document.getElementById('productDetailParent');
 
-  let Left = document.getElementById("left");
-  let Right = document.getElementById("right");
+	let Left = document.getElementById('left');
+	let Right = document.getElementById('right');
 
-  let p = document.createElement("p");
-  p.setAttribute("class", "produtPara");
-  p.innerHTML = `Home / Clothing / Men Clothing / Tshirts /<span> ${product.brand}</span>/<span> ${product.productTitle}</span>`;
-  productDetailContainer.append(p);
+	let p = document.createElement('p');
+	p.setAttribute('class', 'produtPara');
+	p.innerHTML = `Home / Clothing / Men Clothing / Tshirts /<span> ${product.brand}</span>/<span> ${product.productTitle}</span>`;
+	productDetailContainer.append(p);
 
-  Left.innerHTML = `<img src="${product.images}" alt="">
+	Left.innerHTML = `<img src="${product.images}" alt="">
   <img src="${product.images}" alt="">
   <img src="${product.images}" alt="">
   <img src="${product.images}" alt="">`;
 
-
-  Right.innerHTML = ` <h3 class="poductName">${product.brand}</h3>
+	Right.innerHTML = ` <h3 class="poductName">${product.brand}</h3>
     <h3 class="ProductTitle">${product.productTitle}</h3>
     <div class="ratebox">
     <p class="productRating">${product.rating}</p>
@@ -94,82 +93,6 @@ const displayData = () => {
 
   productDetailParent.append(Left, Right);
   productDetailContainer.append(productDetailParent);
-
-
-  let wishlist = document.getElementById("wishlist");
-  wishlist.addEventListener("click", () => {
-    wishlist.style.backgroundColor = "#535766";
-    addToWishList(product);
-  });
-
-  wishlist.addEventListener("dblclick", () => {
-    wishlist.style.backgroundColor = "#fff";
-  });
-
-  //-----------------------------------------------------------------
-
-  let cart = document.getElementById("cart");
-  cart.addEventListener("click", () => {
-    addToCart(product);
-  });
-
-  //-------------------------------------------------------------------
-  let shirtSize = document.getElementsByClassName("circles");
-
-  for (let i = 0; i < shirtSize.length; i++) {
-    shirtSize[i].addEventListener("click", () => {
-      addSize(shirtSize[i]);
-    });
-  }
-};
+}
 
 displayData();
-
-
-let WishListData = localStorage.getItem("WishList");
-if (WishListData === null) {
-  localStorage.setItem("WishList", JSON.stringify([]));
-}
-
-let SelectedSize;
-const addSize = (data) => {
-  SelectedSize = data.textContent;
-  WishListData = JSON.parse(localStorage.getItem("WishList"));
-  let newData = WishListData.forEach((data) => {
-    data.size = SelectedSize;
-    // console.log(data)
-  });
-  // console.log(newData)
-  //  localStorage.setItem("WishList", JSON.stringify(newData));
-};
-
-const addToWishList = (product) => {
-  WishListData = JSON.parse(localStorage.getItem("WishList"));
-  console.log(WishListData);
-  let checkIfProductExit = WishListData.find((Item) => Item.id === product.id);
-
-  if (!checkIfProductExit) {
-    WishListData.push(product);
-    localStorage.setItem("WishList", JSON.stringify(WishListData));
-    
-  }
-};
-
-//---------------------------------------------------------------------------------
-
-let cart = localStorage.getItem("cart");
-if (cart === null) {
-  localStorage.setItem("cart", JSON.stringify([]));
-}
-
-const addToCart = (data) => {
-  let cartbtn = document.getElementById("cart");
-  let cart = JSON.parse(localStorage.getItem("cart"));
-  let checkIfProductExit = cart.find((cartItem) => cartItem.id === data.id);
-  cart.push(data);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  location.reload();
-  
-};
-
-
