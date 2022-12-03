@@ -130,7 +130,7 @@ var obj = {
 };
 
 function appendPage() {
-	let pro = JSON.parse(localStorage.getItem('clickedProduct'));
+	let pro = JSON.parse(localStorage.getItem('cart'));
 	let page = document.getElementById('center');
 
 	page.innerHTML = null;

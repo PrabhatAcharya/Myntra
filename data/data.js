@@ -82,7 +82,7 @@ const data = {
 			price: 3900, //in INR
 			category: '',
 			discount: '',
-			brand: '',
+			brand: 'Zara',
 			men: true,
 			wishlist: false,
 			cart: false,
