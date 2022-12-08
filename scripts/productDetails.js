@@ -1,6 +1,8 @@
 import data from '../data/data.js';
 import { navbar } from '../components/navbar.js';
 document.getElementById('header').innerHTML = navbar();
+import { footer } from '../components/footer.js';
+document.getElementById('footer').innerHTML = footer();
 console.log(data);
 
 let productDetailContainer = document.getElementById("productDetailContainer");
@@ -96,3 +98,13 @@ const displayData = () => {
 }
 
 displayData();
+document.getElementById('footerDiv').innerHTML = footer();
+document.getElementById('cart').addEventListener('click', async (e) => {
+	console.log(product);
+	await fetch(URL + '/' + product.id, {
+		method: 'PATCH',
+		body: JSON.stringify({ cart: true }),
+		headers: { 'Content-Type': 'application/json' },
+	});
+	location = 'bag.html';
+});
